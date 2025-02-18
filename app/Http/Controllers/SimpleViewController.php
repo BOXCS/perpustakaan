@@ -6,27 +6,41 @@ use Illuminate\Http\Request;
 
 class SimpleViewController extends Controller
 {
-    // Method untuk route '/hello'
-    public function hello()
-    {
-        return "Hello, World";
-    }
+    // public function hello()
+    // {
+    //     return "Hello, World";
+    // }
 
-    // Method untuk route '/user/{id}'
-    public function showUserById($id)
-    {
-        return "User ID: " . $id;
-    }
+   
+    // public function showUserById($id)
+    // {
+    //     return "User ID: " . $id;
+    // }
 
-    // Method untuk route '/user/{name?}'
-    public function showUserByName($name = 'Guest')
-    {
-        return "Hello, " . $name;
-    }
+    // public function showUserByName($name = 'Guest')
+    // {
+    //     return "Hello, " . $name;
+    // }
 
-    // Method untuk route '/dashboard'
     public function dashboard()
     {
         return view('dashboard');
     }
+
+    public function adminDashboard()
+    {
+        return "Admin Dashboard";
+    }
+
+    public function adminUsers()
+    {
+        return "Admin Users";
+    }
+
+    public function notFound() {
+        return view('404');
+    }
+
+    // Method untuk route '/dashboard Admin'
+    // public
 }
