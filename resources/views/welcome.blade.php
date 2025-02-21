@@ -15,5 +15,6 @@
     <p>/dashboard -> ke page dashboard</p>
     <p>/admin/dashboard -> ke page admin dashboard</p>
     <p>/admin/users -> ke page admin users</p>
+    <p>/data-form -> ke page GET, POST, PUT, DELETE, PATCH</p>
 </body>
 </html>
