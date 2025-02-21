@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Post</title>
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <h1>Welcome to Workshop space</h1>
-    <h2>Here is the list of routes</h2>
-    <p>/posts -> Post page</p>
-    <p>/hello</p>
-    <p>/user/{id}</p>
-    <p>/user/{name}</p>
-    <p>/dashboard -> ke page dashboard</p>
-    <p>/admin/dashboard -> ke page admin dashboard</p>
-    <p>/admin/users -> ke page admin users</p>
-    <p>/data-form -> ke page GET, POST, PUT, DELETE, PATCH</p>
+<div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+  A simple secondary alert—check it out!
+</div>
+<div class="alert alert-success" role="alert">
+  A simple success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="alert alert-info" role="alert">
+  A simple info alert—check it out!
+</div>
+<div class="alert alert-light" role="alert">
+  A simple light alert—check it out!
+</div>
+<div class="alert alert-dark" role="alert">
+  A simple dark alert—check it out!
+</div>
 </body>
 </html>
