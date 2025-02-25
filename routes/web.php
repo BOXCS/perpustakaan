@@ -79,7 +79,7 @@ Route::post('/book', [BookController::class, 'store']);
 Route::put('/book/{id}', [BookController::class, 'update']);
 Route::delete('/book/{id}', [BookController::class, 'destroy']);
 
-Route::resource('book', BookController::class);
+Route::resource('books', BookController::class);
 
 // Route::get('/data', function () {
 //     return "GET Request";

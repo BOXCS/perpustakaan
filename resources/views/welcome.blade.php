@@ -7,29 +7,12 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
-</div>
-<div class="alert alert-secondary" role="alert">
-  A simple secondary alert—check it out!
-</div>
-<div class="alert alert-success" role="alert">
-  A simple success alert—check it out!
-</div>
-<div class="alert alert-danger" role="alert">
-  A simple danger alert—check it out!
-</div>
-<div class="alert alert-warning" role="alert">
-  A simple warning alert—check it out!
-</div>
-<div class="alert alert-info" role="alert">
-  A simple info alert—check it out!
-</div>
-<div class="alert alert-light" role="alert">
-  A simple light alert—check it out!
-</div>
-<div class="alert alert-dark" role="alert">
-  A simple dark alert—check it out!
-</div>
+<ul class="list-group">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
+</ul>
 </body>
 </html>

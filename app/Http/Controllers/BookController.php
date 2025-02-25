@@ -2,18 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('auth');
+        // $this->middleware('auth')->except(['index', 'show']);
+        // $this->middleware('guest')->only(['create']);
+        $this->middleware('auth')->only(['store', 'update', 'destroy']);
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Book $book)
     {
-        return "Menampilkan semua buku";
+        // return $book->all();
+        // Ambil semua data buku dari database
+        $books = Book::all();
+
+        // Kirim data $books ke view
+        return view('books.index', compact('books'));
     }
 
     /**
@@ -34,7 +47,14 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        return "Menyimpan buku baru";
+        // return "Menyimpan buku baru";
+        $book = new Book();
+        $book->nama = 'Laptop';
+        $book->harga = 15000000;
+        $book->stok = 10;
+        $book->save();
+
+        return redirect()->route('books.index')->with('success', 'Buku berhasil ditambahkan');
     }
 
     /**
@@ -45,7 +65,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        return "Menampilka buku ddengan ID: . $id ";
+        return "Menampilkan buku ddengan ID: . $id ";
     }
 
     /**
@@ -68,7 +88,12 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "Mengupdate buku dengan ID: $id";
+        // return "Mengupdate buku dengan ID: $id";
+        $book = Book::find(1);
+        $book->harga = 16000000;
+        $book->save();
+
+        return redirect()->route('books', BookController::class);
     }
 
     /**
@@ -79,6 +104,8 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        return "Menghapus buku dengan ID: . $id";
+        // return "Menghapus buku dengan ID: . $id";
+        $book = Book::find(1);
+        $book->delete();
     }
 }
