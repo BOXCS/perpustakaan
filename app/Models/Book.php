@@ -11,4 +11,8 @@ class Book extends Model
     protected $table = 'books';
 
     protected $fillable = ['nama', 'harga', 'stok'];
+
+    public function kategori() {
+        return $this->belongsToMany(Kategori::class);
+    }
 }
