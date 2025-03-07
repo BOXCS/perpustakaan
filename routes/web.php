@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SimpleViewController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\DosenController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -73,13 +75,17 @@ Route::get('/home', function () {
     return view('home', compact('user', 'status'));
 });
 
-Route::get('/book', [BookController::class, 'index']);
-Route::get('/book/{id}', [BookController::class, 'show']);
-Route::post('/book', [BookController::class, 'store']);
-Route::put('/book/{id}', [BookController::class, 'update']);
-Route::delete('/book/{id}', [BookController::class, 'destroy']);
+// Route::get('/book', [BookController::class, 'index']);
+// Route::get('/book/{id}', [BookController::class, 'show']);
+// Route::post('/book', [BookController::class, 'store']);
+// Route::put('/book/{id}', [BookController::class, 'update']);
+// Route::delete('/book/{id}', [BookController::class, 'destroy']);
 
 Route::resource('books', BookController::class);
+
+Route::resource('dosen', DosenController::class);
+
+Route::resource('articles', ArticleController::class);
 
 // Route::get('/data', function () {
 //     return "GET Request";

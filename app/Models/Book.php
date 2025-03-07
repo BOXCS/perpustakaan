@@ -10,7 +10,7 @@ class Book extends Model
     use HasFactory;
     protected $table = 'books';
 
-    protected $fillable = ['nama', 'harga', 'stok'];
+    protected $fillable = ['id_kategori', 'Tanggal', 'Judul', 'Isi', 'Status'];
 
     public function kategori() {
         return $this->belongsToMany(Kategori::class);

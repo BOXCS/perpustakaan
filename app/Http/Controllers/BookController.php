@@ -36,7 +36,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return "Menampilkan form untuk membuat buku baru";
+        return view('books.create');
     }
 
     /**
@@ -47,14 +47,16 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        // return "Menyimpan buku baru";
-        $book = new Book();
-        $book->nama = 'Laptop';
-        $book->harga = 15000000;
-        $book->stok = 10;
-        $book->save();
+        $validated = $request->validate([
+            'kategori_id' => 'required',
+            'tanggal' => 'required|date',
+            'judul' => 'required|max:255',
+            'isi' => 'required',
+            'status' => 'required'
+        ]);
 
-        return redirect()->route('books.index')->with('success', 'Buku berhasil ditambahkan');
+        Book::create($validated);
+        return redirect()->route('books.index')->with('success','Data Berhasil Dibuat');
     }
 
     /**
